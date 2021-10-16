@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whb.dao.GoodsMapper">
+  <resultMap id="BaseResultMap" type="com.whb.model.GoodsInfoEntity">
+    <id column="GOODS_NAME" jdbcType="VARCHAR" property="goodsName" />
+    <result column="GOODS_COUNT" jdbcType="INTEGER" property="goodsCount" />
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+  </resultMap>
+
+  <sql id="BaseSelectCloumn">
+    ID,GOODS_NAME,GOODS_COUNT
+  </sql>
+  <select id="getGoodsInfo" resultMap="BaseResultMap">
+    SELECT <include refid="BaseSelectCloumn"/> FROM goods
+    <where>
+      <if test="id != null and id !=''">
+        id =#{id}
+      </if>
+    </where>
+  </select>
+</mapper>

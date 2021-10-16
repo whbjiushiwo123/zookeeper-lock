@@ -1,0 +1,20 @@
+server:
+  port: 8280
+spring:
+  profiles:
+    active: dev
+  redis:
+    database: 0 # Database index used by the connection factory.
+    host: 39.101.143.248 # Redis server host.
+    password: 80909891aB= # Login password of the redis server.
+    port: 6381 # Redis server port.
+    ssl: false # Whether to enable SSL support.
+    timeout: 5000 # Connection timeout.
+  rabbitmq:
+    host: "39.101.143.248"
+    port: 5672
+    username: "guest"
+    password: "guest"
+    cache:
+      channel:
+        size: 8

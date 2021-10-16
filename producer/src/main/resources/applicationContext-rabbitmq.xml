@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/rabbit
+        http://www.springframework.org/schema/rabbit/spring-rabbit-2.0.xsd">
+
+    <rabbit:admin connection-factory="rabbitConnectionFactory"/>
+    <!-- 短信相关 -->
+    <rabbit:queue id="order-save"  name="order-save" durable="true" />
+
+    <!-- 将队列和交换器由键绑定 -->
+    <rabbit:direct-exchange name="order-save-exchange"
+                            xmlns="http://www.springframework.org/schema/rabbit"
+                            durable="true">
+        <bindings>
+            <binding queue="order-save" key="order"></binding>
+        </bindings>
+    </rabbit:direct-exchange>
+</beans>

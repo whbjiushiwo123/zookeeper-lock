@@ -1,0 +1,15 @@
+F:\sources\RedisLock\producer\src\main\java\com\whb\model\OrderInfoEntity.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\service\IOrderInfoService.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\util\EncrypDES.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\ProducerApplication.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\service\IGoodsService.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\service\impl\GoodsService.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\dao\GoodsMapper.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\config\CacheConfig.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\dao\OrderMapper.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\service\impl\OrderInfoService.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\model\GoodsInfoEntity.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\config\RedisKeys.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\controller\GoodsInfoController.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\controller\OrderInfoController.java
+F:\sources\RedisLock\producer\src\main\java\com\whb\mq\OrderSendMQ.java

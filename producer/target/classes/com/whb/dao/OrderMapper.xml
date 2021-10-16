@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whb.dao.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.whb.model.OrderInfoEntity">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="GOODS_COUNT" jdbcType="INTEGER" property="goodsCount" />
+    <result column="GOODS_ID" jdbcType="VARCHAR" property="goodsId" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+  </resultMap>
+
+  <sql id="BaseSelectCloumn">
+    ID,GOODS_ID,GOODS_COUNT,USER_ID
+  </sql>
+
+  <insert id="saveOrder" parameterType="com.whb.model.OrderInfoEntity">
+    INSERT INTO goods_order ( ID,GOODS_ID,GOODS_COUNT,USER_ID ) VALUES(#{id},#{goodsId},#{goodsCount},#{userId})
+  </insert>
+</mapper>
