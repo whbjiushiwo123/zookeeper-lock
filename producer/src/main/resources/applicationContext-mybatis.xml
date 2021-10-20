@@ -12,8 +12,7 @@
         http://www.springframework.org/schema/tx
         https://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:property-placeholder location="classpath:druid.properties" file-encoding="UTF-8" ignore-unresolvable="true"/>
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+       <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="driverClassName" value="${spring.datasource.driverClassName}" />
         <property name="url" value="${spring.datasource.url}" />
         <property name="username" value="${spring.datasource.username}" />

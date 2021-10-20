@@ -17,7 +17,7 @@ public class ZookeeperConfig {
     @Value("${zookeeper.address}")
     private String connectString;
 
-    @Value("${zookeeper.timeout")
+    @Value("${zookeeper.timeout}")
     private int timeout;
     @Bean(name = "zkClient")
     public ZooKeeper zkClient(){

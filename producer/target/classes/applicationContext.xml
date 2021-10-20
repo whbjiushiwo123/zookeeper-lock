@@ -18,6 +18,8 @@
 
     <aop:aspectj-autoproxy />
     <context:component-scan base-package="com.whb"/>
+    <context:property-placeholder location="classpath:zookeeper.properties,classpath:druid.properties" file-encoding="UTF-8" ignore-unresolvable="true"/>
+
     <import resource="applicationContext-mybatis.xml"/>
     <import resource="applicationContext-redis.xml"/>
     <import resource="applicationContext-rabbitmq.xml"/>

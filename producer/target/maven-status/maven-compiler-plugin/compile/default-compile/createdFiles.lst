@@ -3,11 +3,15 @@ com\whb\dao\OrderMapper.class
 com\whb\controller\OrderInfoController.class
 com\whb\service\impl\OrderInfoService.class
 com\whb\ProducerApplication.class
+com\whb\util\WatcherApi.class
 com\whb\config\CacheConfig$1.class
+com\whb\config\ZookeeperConfig$1.class
 com\whb\dao\GoodsMapper.class
 com\whb\util\EncrypDES.class
 com\whb\controller\GoodsInfoController.class
 com\whb\config\RedisKeys.class
+com\whb\config\ZookeeperConfig.class
+com\whb\util\ZkApi.class
 com\whb\mq\OrderSendMQ.class
 com\whb\config\CacheConfig.class
 com\whb\model\OrderInfoEntity.class

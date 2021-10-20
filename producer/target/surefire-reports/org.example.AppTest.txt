@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: org.example.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.978 s - in org.example.AppTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.931 s <<< FAILURE! - in org.example.AppTest
+test02(org.example.AppTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zookeeperConfig': Unsatisfied dependency expressed through field 'timeout'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "${zookeeper.timeout"
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "${zookeeper.timeout"
+Caused by: java.lang.NumberFormatException: For input string: "${zookeeper.timeout"
+

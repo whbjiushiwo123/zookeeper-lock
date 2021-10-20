@@ -7,6 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ZkApi {
     private static Logger logger = LoggerFactory.getLogger(ZkApi.class);
@@ -59,4 +63,49 @@ public class ZkApi {
         }
     }
 
+    public boolean deleteNode(String path){
+        //version参数指定要更新的数据的版本, 如果version和真实的版本不同, 更新操作将失败. 指定version为-1则忽略版本检查
+        try {
+            zkClient.delete(path,-1);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    /**
+     * 获取当前节点的子节点(不包含孙子节点)
+     * @param path 父节点path
+     */
+    public List<String> getChildren(String path){
+        try {
+           return zkClient.getChildren(path,false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
+    public String getData(String path,Watcher watcher){
+        try {
+            Stat stat = new Stat();
+            byte[] bytes = zkClient.getData(path,watcher,stat);
+            return new String(bytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @PostConstruct
+    public void init(){
+        String path="/zk-watcher-2";
+        logger.info("【执行初始化测试方法。。。。。。。。。。。。】");
+        createNode(path,"测试");
+        String value=getData(path,new WatcherApi());
+        logger.info("【执行初始化测试方法getData返回值。。。。。。。。。。。。】={}",value);
+
+        // 删除节点出发 监听事件
+        deleteNode(path);
+    }
 }
