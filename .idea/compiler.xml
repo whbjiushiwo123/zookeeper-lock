@@ -6,18 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="producer" />
+        <module name="sender" />
         <module name="distributedLock" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="producer" target="1.8" />
+      <module name="sender" target="8" />
       <module name="zookeeper-lock" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="producer" options="-parameters" />
+      <module name="sender" options="-parameters" />
     </option>
   </component>
 </project>
